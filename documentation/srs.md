@@ -24,7 +24,8 @@ The mode is designed to view the list of departments that are stored in database
 * User selects item "Departments";
 * Application displays list of departments.
 
-![Departments mockup](https://ibb.co/XDrDYPs "Departments")
+![Departments mockup](https://i.ibb.co/RNkNjK0/deps.jpg)
+
 Pic. 1.1 View the departments list.
 
 The list displays the following columns:
@@ -49,7 +50,8 @@ The list displays the following columns:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Departments mockup](https://ibb.co/fv5jSCY "Add department")
+![Departments mockup](https://i.ibb.co/RymRSCp/form-dep.jpg "Add department")
+
 Pic. 1.2 Add department.
 
 When adding a department, the following details are entered:
@@ -73,7 +75,8 @@ When adding a department, the following details are entered:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Departments mockup](https://ibb.co/fv5jSCY "Edit department")
+![Departments mockup](https://i.ibb.co/RymRSCp/form-dep.jpg "Edit department")
+
 Pic. 1.3 Edit department.
 
 When editing a department, the following details are entered:
@@ -102,7 +105,8 @@ Constraints for data validation:
 * User press "Cancel" button;
 * List of departments without changes is displaying.
 
-![Departments mockup](https://ibb.co/CW5z1nS "Delete department")
+![Departments mockup](https://i.ibb.co/jHvT6Lj/delete-deps.jpg "Delete department")
+
 Pic. 1.4 Delete department.
 
 ### 1.5 Department page
@@ -114,7 +118,8 @@ Pic. 1.4 Delete department.
 * User clicks the "More" button in the departments list view mode;
 * Application displays list of related employees and calculated average salary of them.
 
-![Departments mockup](https://ibb.co/BfYcpvy "Department")
+![Departments mockup](https://i.ibb.co/TwNYfJ4/dep.jpg "Department")
+
 Pic. 1.5 Department page.
 
 The list displays the following columns:
@@ -141,7 +146,8 @@ The list displays the following columns:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Departments mockup](https://ibb.co/VSJNgHP "Add employee")
+![Departments mockup](https://i.ibb.co/HzB2tNk/form-emp-dep.jpg "Add employee")
+
 Pic. 1.6 Add department.
 
 When adding employee, the following details are entered:
@@ -168,7 +174,8 @@ When adding employee, the following details are entered:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Departments mockup](https://ibb.co/VSJNgHP "Edit employee")
+![Departments mockup](https://i.ibb.co/HzB2tNk/form-emp-dep.jpg "Edit employee")
+
 Pic. 1.7 Edit department.
 
 When editing employee, the following details are entered:
@@ -196,7 +203,8 @@ When editing employee, the following details are entered:
 * User press "Cancel" button;
 * Department page without changes is displaying.
 
-![Departments mockup]( https://ibb.co/93qqgKM "Delete employee")
+![Departments mockup](https://i.ibb.co/Vpvv9nK/delete-dep.jpg "Delete employee")
+
 Pic. 1.8 Delete department.
 
 ## 2. Employees
@@ -210,7 +218,8 @@ The mode is designed to view the list of employees that are stored in database.
 * User selects item "Employee";
 * Application displays list of employees.
 
-![Employee mockup](https://ibb.co/W38krDd "Employees")
+![Employee mockup](https://i.ibb.co/dcCPNb3/emps.jpg "Employees")
+
 Pic. 2.1 View the employees list.
 
 The list displays the following columns:
@@ -248,7 +257,8 @@ Restrictions:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Employee mockup](https://ibb.co/hBnHWSK "Add employee")
+![Employee mockup](https://i.ibb.co/7nTVWqG/form-emp.jpg "Add employee")
+
 Pic. 2.2 Add employee.
 
 When adding employee, the following details are entered:
@@ -276,7 +286,8 @@ When adding employee, the following details are entered:
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Employee mockup](https://ibb.co/hBnHWSK "Edit employee")
+![Employee mockup](https://i.ibb.co/7nTVWqG/form-emp.jpg "Edit employee")
+
 Pic. 2.3 Edit employee.
 
 When editing employee, the following details are entered:
@@ -287,7 +298,7 @@ When editing employee, the following details are entered:
 * Department - Related department from list;
 * Salary - Employee's salary.
 
-### 2.4 Remove employees
+### 2.4 Remove employee
 
 **Main scenario:**
 
@@ -305,7 +316,8 @@ When editing employee, the following details are entered:
 * User press "Cancel" button;
 * List of employees without changes is displaying.
 
-![Employee mockup](https://ibb.co/WB4rTc2 "Delete employee")
+![Employee mockup](https://i.ibb.co/gtL0nDR/delete-emps.jpg "Delete employee")
+
 Pic. 2.4 Delete employee.
 
 ### 2.5 Employee page
@@ -317,7 +329,7 @@ Pic. 2.4 Delete employee.
 * User clicks the "More" button in the employees list view mode;
 * Application displays employee data.
 
-![Employee mockup](https://ibb.co/PTMzZw6 "Employee")
+![Employee mockup](https://i.ibb.co/ChrJqtF/emp.jpg "Employee")
 Pic. 2.5 Employee page.
 
 #### 2.5.2 Edit employee
@@ -337,7 +349,7 @@ Pic. 2.5 Employee page.
 * User press "Cancel" button;
 * Data don't save, list of records is displaying to user.
 
-![Employee mockup](https://ibb.co/J5hxNdP "Edit employee")
+![Employee mockup](https://i.ibb.co/7nTVWqG/form-emp.jpg "Edit employee")
 Pic. 2.6 Edit employee.
 
 When editing employee, the following details are entered:
@@ -348,7 +360,7 @@ When editing employee, the following details are entered:
 * Department - Related department from list;
 * Salary - Employee's salary.
 
-#### 2.4 Remove employees
+#### 2.4 Remove employee
 
 **Main scenario:**
 
@@ -366,5 +378,6 @@ When editing employee, the following details are entered:
 * User press "Cancel" button;
 * Employee data without changes is displaying.
 
-![Employee mockup](https://ibb.co/PTMzZw6 "Delete employee")
+![Employee mockup](https://i.ibb.co/SQc7XR3/delete-emp.jpg "Delete employee")
+
 Pic. 2.7 Delete employee.
