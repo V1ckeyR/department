@@ -1,0 +1,153 @@
+header {
+    border-bottom: 2px solid rgb(238, 231, 229);
+    margin-bottom: 10px;
+}
+
+body.container {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    font-size: 130%;
+    background-color: rgb(26, 26, 52);
+}
+
+nav {
+    padding: 30px 0 30px 30px;
+    float: right;
+    position: sticky;
+    display: block;
+}
+
+nav a {
+    display: inline-block;
+    color: rgb(238, 231, 229);
+}
+
+h1, h2, a, p {
+    padding: 10px 5px 10px 5px;
+    color: rgb(238, 231, 229)!important;
+}
+
+span {
+    font-size: 250%;
+    color: rgb(236, 86, 63);
+}
+
+.new-item {
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgb(238, 231, 229);
+}
+
+.new-item a {
+    font-size: 200%;
+    color: rgb(26, 26, 52)!important;
+}
+
+.item {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(236, 86, 63);
+}
+
+.item span {
+    padding: 10px 5px 10px 5px;
+    font-size: 130%;
+    color: rgb(26, 26, 52);
+}
+
+.item a {
+    font-size: 80%;
+    color: rgb(26, 26, 52)!important;
+}
+
+form {
+    margin: 20px 0;
+}
+
+label {
+    margin-top: 10px;
+    color: rgb(238, 231, 229)!important;
+}
+
+form input[type=date] {
+    color: rgb(26, 26, 52);
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+input[type=text], select {
+    color: rgb(26, 26, 52);
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+}
+
+input[type=submit], input[type=button] {
+    box-sizing: border-box;
+    color: rgb(26, 26, 52);
+    background-color: rgb(236, 86, 63);
+    border: 2px solid rgb(26, 26, 52);
+    width: 30%;
+}
+
+.employee {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: max-content auto;
+}
+
+.column {
+    text-align: center;
+}
+
+.column a, img {
+    padding: 10px;
+    color: rgb(26, 26, 52)!important;
+    background-color: rgb(236, 86, 63);
+}
+
+.filter {
+    display: grid;
+    grid-column-gap: 150px;
+    grid-template-columns: auto auto;
+}
+
+.filter input[type=date] {
+    color: rgb(26, 26, 52);
+    padding: 5px;
+    margin: 5px 0;
+}
+
+.filter label {
+    margin-right: 10px;
+}
+
+.delete {
+    display: none;
+    background-color: rgb(238, 231, 229)!important;
+    padding: 20px;
+    border: 2px solid rgb(26, 26, 52);
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.delete h1, p {
+    text-align: center;
+    color: rgb(26, 26, 52)!important;
+}
+
+.delete h1 {
+    font-size: 180%;
+    border-bottom: 2px solid rgb(26, 26, 52);
+}
+
+.delete button {
+    box-sizing: border-box;
+    color: rgb(26, 26, 52);
+    border: 2px solid rgb(26, 26, 52);
+}

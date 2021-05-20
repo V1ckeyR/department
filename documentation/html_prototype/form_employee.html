@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title> Company </title>
+</head>
+<body class="container">
+<header>
+    <div>
+        <a href="departments.html" style="padding: 0;"><span>Company</span></a>
+        <a>Add/Edit employee</a>
+    </div>
+</header>
+<main>
+    <form>
+        <label for="employee_name">Name:</label>
+        <input type="text" id="employee_name" name="employeename">
+
+        <label for="employee_surname">Surname:</label>
+        <input type="text" id="employee_surname" name="employeesurname">
+
+        <label for="employee_date">Date of birth:</label>
+        <input type="date" id="employee_date" name="employeedate">
+
+        <label for="employee_department">Department</label>
+        <select id="employee_department">
+            <option>HUMAN RESOURCE</option>
+            <option>INFORMATION AND TECHNOLOGY SUPPORT</option>
+            <option>RESEARCH AND DEVELOPMENT</option>
+        </select>
+
+        <label for="employee_salary">Salary:</label>
+        <input type="text" id="employee_salary" name="employeesalary">
+        <div style="margin-top: 20px">
+            <input type="submit" value="Submit">
+            <input type="button" value="Cancel" style="float:right">
+        </div>
+    </form>
+</main>
+</body>
