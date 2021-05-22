@@ -8,6 +8,5 @@ install:
   - python setup.py -q install
 script:
   - python -m unittest discover
-  - python department-app/rest/app.py
 after_success:
   - coveralls
