@@ -1,0 +1,13 @@
+language: python
+python: 
+  - "3.9"
+before_install:
+  - python -m pip install --upgrade pip
+install:
+  - pip install -r requirements.txt
+  - python setup.py -q install
+script:
+  - cd department-app
+  - coverage run --source=. --omit '*/venv/*' -m unittest
+after_success:
+  - coveralls
