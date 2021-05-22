@@ -7,6 +7,7 @@ install:
   - pip install -r requirements.txt
   - python setup.py -q install
 script:
-  - coverage run --source=department-app -m unittest discover
+  - cd department-app
+  - coverage run --source=. --omit '*/venv/*' -m unittest
 after_success:
   - coveralls
