@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Employees</h1>
+
+    <div class="filter">
+        <div>
+            <label for="start">Date from:</label>
+            <input type="date" id="start" name="trip-start"
+                   value="1990-01-01"
+                   min="1950-01-01" max="2005-01-01">
+        </div>
+        <div>
+            <label for="end">by:</label>
+            <input type="date" id="end" name="trip-end"
+                   value="2005-01-01"
+                   min="1950-01-01" max="2005-01-01">
+        </div>
+    </div>
+
+    {% for employee in emps %}
+        <div class="item">
+            <span>{{ employee.name }} {{ employee.surname }}</span>
+            <br><a>Birthday: {{ employee.date_of_birth }}</a>
+            <br><a>Salary: {{ employee.salary }}</a>
+            <div>
+                <a>Edit</a>
+                <a>|</a>
+                <a>Delete</a>
+                <a>|</a>
+                <a>More...</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="new-item">
+        <a>+</a>
+    </div>
+
+    <div class="delete">
+        <h1>Delete employee</h1>
+        <p>Please, confirm removing</p>
+        <div>
+            <button>Yes</button>
+            <button style="float: right">Cancel</button>
+        </div>
+    </div>
+
+{% endblock %}

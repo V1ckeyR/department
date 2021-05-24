@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Departments</h1>
+
+    {% for department in deps %}
+        <div class="item">
+            <span>{{ department.name }}</span>
+            <br><a>Average salary: unknown</a>
+            <div>
+                <a>Edit</a>
+                <a>|</a>
+                <a>Delete</a>
+                <a>|</a>
+                <a>More...</a>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="new-item">
+        <a>+</a>
+    </div>
+
+    <div class="delete">
+        <h1>Delete department</h1>
+        <p>Please, confirm removing</p>
+        <div>
+            <button>Yes</button>
+            <button style="float: right">Cancel</button>
+        </div>
+    </div>
+
+{% endblock %}
