@@ -1,4 +1,5 @@
 """Data class for configuration"""
+import os
 from os import environ
 
 
@@ -9,7 +10,7 @@ class Config:
     db_name = environ['db_name']
     db_host = environ['db_host']
     db_user = environ['db_user']
-    db_passwd = environ['db_passwd']
+    db_passwd = environ['db_passwd'] if ('db_passwd' in os.environ) else ''
 
     # App Config
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{db_user}:{db_passwd}@{db_host}/{db_name}'
