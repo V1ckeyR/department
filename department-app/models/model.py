@@ -1,4 +1,4 @@
-from service.init_app import db
+from views.app import db
 
 
 class Department(db.Model):
