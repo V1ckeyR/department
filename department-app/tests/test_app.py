@@ -1,5 +1,6 @@
 import unittest
-from views.controller import app
+
+from rest.app import app
 
 
 class TestApp(unittest.TestCase):

@@ -15,3 +15,4 @@ class Config:
     # App Config
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{db_user}:{db_passwd}@{db_host}/{db_name}'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = 'not really secret for a while'

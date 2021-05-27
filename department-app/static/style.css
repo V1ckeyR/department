@@ -125,7 +125,6 @@ input[type=submit], input[type=button] {
 }
 
 .delete {
-    display: none;
     background-color: rgb(238, 231, 229)!important;
     padding: 20px;
     border: 2px solid rgb(26, 26, 52);
@@ -150,4 +149,13 @@ input[type=submit], input[type=button] {
     box-sizing: border-box;
     color: rgb(26, 26, 52);
     border: 2px solid rgb(26, 26, 52);
+}
+
+#delete_text:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#department_delete {
+    display: none;
 }

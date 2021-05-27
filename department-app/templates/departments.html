@@ -8,25 +8,25 @@
             <span>{{ department.name }}</span>
             <br><a>Average salary: {{ department.avg }}</a>
             <div>
-                <a>Edit</a>
+                <a href='/departments/edit/{{ department.id }}'>Edit</a>
                 <a>|</a>
-                <a>Delete</a>
+                <a id="delete_text" onclick="deleteDisplay({{ department.id }})">Delete</a>
                 <a>|</a>
                 <a href="/departments/{{ department.id }}">More...</a>
             </div>
         </div>
     {% endfor %}
 
-    <div class="new-item">
+    <div onclick="location.href='/departments/add';" class="new-item">
         <a>+</a>
     </div>
 
-    <div class="delete">
+    <div class="delete" id="department_delete">
         <h1>Delete department</h1>
         <p>Please, confirm removing</p>
         <div>
-            <button>Yes</button>
-            <button style="float: right">Cancel</button>
+            <button id="yes">Yes</button>
+            <button style="float: right" onclick="deleteDisplay()">Cancel</button>
         </div>
     </div>
 
