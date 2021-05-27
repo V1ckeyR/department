@@ -1,5 +1,5 @@
+from config import departments_data, employees_data
 from models import model
-from .config import departments_data, employees_data
 
 
 def populate_table(database, table, data):
@@ -21,3 +21,4 @@ def populate_db():
 
     populate_table(model.db, model.Department, departments_data)
     populate_table(model.db, model.Employee, employees_data)
+

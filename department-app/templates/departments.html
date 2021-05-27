@@ -6,13 +6,13 @@
     {% for department in deps %}
         <div class="item">
             <span>{{ department.name }}</span>
-            <br><a>Average salary: unknown</a>
+            <br><a>Average salary: {{ department.avg }}</a>
             <div>
                 <a>Edit</a>
                 <a>|</a>
                 <a>Delete</a>
                 <a>|</a>
-                <a>More...</a>
+                <a href="/departments/{{ department.id }}">More...</a>
             </div>
         </div>
     {% endfor %}

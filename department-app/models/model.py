@@ -1,4 +1,4 @@
-from views.app import db
+from rest.db import db
 
 
 class Department(db.Model):
