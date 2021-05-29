@@ -1,0 +1,55 @@
+from flask import request, make_response, redirect, flash
+from flask_restful import Resource, abort
+from sqlalchemy import func
+
+from models.model import Employee, Department
+from rest.db import db
+from views import view
+from views.forms import EmployeeForm
+
+
+class EmployeesResource(Resource):
+    @staticmethod
+    def get():
+        args = request.args
+        min_date = Employee.query.with_entities(func.min(Employee.date_of_birth)).first()[0]
+        max_date = Employee.query.with_entities(func.max(Employee.date_of_birth)).first()[0]
+
+        start = args["start"] if "start" in args else min_date
+        finish = args["finish"] if "finish" in args else max_date
+
+        employees = Employee.query\
+            .join(Department)\
+            .with_entities(Department.name.label('department'), Employee.id, Employee.name,
+                           Employee.surname, Employee.date_of_birth, Employee.salary)\
+            .filter(Employee.date_of_birth.between(start, finish))\
+            .all()
+
+        response = make_response(view.employees(employees, min_date, max_date, (start, finish)))
+        response.content_type = 'text/html'
+        return response
+
+    @staticmethod
+    def post():
+        form = EmployeeForm()
+        departments = Department.query.with_entities(Department.name).all()
+        form.department.choices = list(map(lambda i: i[0], departments))
+
+        if form.validate_on_submit():
+            name = form.name.data.capitalize()
+            surname = form.surname.data.capitalize()
+            date = form.date.data
+            department_name = form.department.data
+            department = Department.query.filter_by(name=department_name).with_entities(Department.id).first()[0]
+            salary = form.salary.data
+
+            if Employee.query.filter_by(name=name, surname=surname, date_of_birth=date).first():
+                abort(409, message='Employee already exists')
+
+            db.session.add(Employee((name, surname, department, date, salary)))
+            db.session.commit()
+
+            return redirect('/employees')
+
+        flash(f"Validation failed: {form.errors}")
+        return redirect('/employees/add')

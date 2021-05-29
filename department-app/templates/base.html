@@ -2,18 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='style.css') }}>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <script src={{ url_for('static', filename='script.js') }}></script>
+    {% block head %} {% endblock %}
     <title> Company </title>
 </head>
 <body class="container">
 <header>
     <a href="/" style="padding: 0;"><span>Company</span></a>
-    <nav>
-        <a href="/departments">Departments</a>
-        <a href="/employees">Employees</a>
-    </nav>
+    {% block header %} {% endblock %}
 </header>
 <main>
     {% block main %} {% endblock %}

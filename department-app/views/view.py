@@ -1,6 +1,4 @@
 from flask import render_template
-from models import model
-from rest.app import app
 
 
 def departments(data):
@@ -19,6 +17,17 @@ def department_edit(dep):
     return render_template("form_edit_department.html", dep=dep)
 
 
-@app.route('/employees')
-def employees():
-    return render_template("employees.html", emps=model.Employee.query.all())
+def employees(args, min_date, max_date, values):
+    return render_template("employees.html", emps=args, min=min_date, max=max_date, values=values)
+
+
+def employee(data):
+    return render_template("employee.html", employee=data)
+
+
+def employee_add(form):
+    return render_template("form_add_employee.html", form=form)
+
+
+def employee_edit(form, emp):
+    return render_template("form_edit_employee.html", form=form, emp=emp)
