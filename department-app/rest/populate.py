@@ -1,5 +1,6 @@
 from config import departments_data, employees_data
-from models import model
+import models
+from rest.db import db
 
 
 def populate_table(database, table, data):
@@ -19,6 +20,6 @@ def populate_table(database, table, data):
 def populate_db():
     """Populate tables with test data"""
 
-    populate_table(model.db, model.Department, departments_data)
-    populate_table(model.db, model.Employee, employees_data)
+    populate_table(db, models.Department, departments_data)
+    populate_table(db, models.Employee, employees_data)
 

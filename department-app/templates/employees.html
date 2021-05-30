@@ -38,7 +38,8 @@
             <div>
                 <a href="/employees/edit/{{ employee.id }}">Edit</a>
                 <a>|</a>
-                <a class="delete_text" onclick="deleteDisplay('employees', {{ employee.id }})">Delete</a>
+                <a class="delete_text" onclick="deleteDisplay('employees_delete',
+                        '/employees/{{ employee.id }}')">Delete</a>
                 <a>|</a>
                 <a href="/employees/{{ employee.id }}">More...</a>
             </div>
@@ -53,9 +54,8 @@
         <h1>Delete employee</h1>
         <p>Please, confirm removing</p>
         <div>
-            <button>Yes</button>
-            <button style="float: right" onclick="deleteDisplay('employees')">Cancel</button>
+            <button id="employees_delete_yes">Yes</button>
+            <button style="float: right" onclick="deleteDisplay('employees_delete')">Cancel</button>
         </div>
     </div>
-
 {% endblock %}

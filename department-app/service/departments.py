@@ -2,7 +2,7 @@ from flask import make_response, redirect, flash
 from flask_restful import Resource, abort
 from sqlalchemy import func
 
-from models.model import Department, Employee
+from models import Department, Employee
 from rest.db import db
 from views.forms import DepartmentForm
 from views import view

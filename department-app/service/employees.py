@@ -2,7 +2,7 @@ from flask import request, make_response, redirect, flash
 from flask_restful import Resource, abort
 from sqlalchemy import func
 
-from models.model import Employee, Department
+from models import Employee, Department
 from rest.db import db
 from views import view
 from views.forms import EmployeeForm
@@ -49,7 +49,11 @@ class EmployeesResource(Resource):
             db.session.add(Employee((name, surname, department, date, salary)))
             db.session.commit()
 
-            return redirect('/employees')
+            new_id = Employee.query.filter_by(name=name, surname=surname, date_of_birth=date)\
+                .with_entities(Employee.id).first()[0]
+
+            print(new_id)
+            return redirect(f'/employees/{new_id}')
 
         flash(f"Validation failed: {form.errors}")
         return redirect('/employees/add')

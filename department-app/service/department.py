@@ -2,7 +2,7 @@ from flask import make_response
 from flask_restful import Resource, abort, reqparse
 from sqlalchemy import func
 
-from models.model import Department, Employee
+from models import Department, Employee
 from rest.db import db
 from views import view
 

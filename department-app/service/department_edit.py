@@ -1,7 +1,7 @@
 from flask import make_response
 from flask_restful import Resource, abort
 
-from models.model import Department
+from models import Department
 from views import view
 
 

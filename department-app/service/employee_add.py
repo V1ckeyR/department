@@ -2,7 +2,7 @@ from flask import make_response
 from flask_restful import Resource
 
 from views.forms import EmployeeForm
-from models.model import Department
+from models.department import Department
 from views import view
 
 

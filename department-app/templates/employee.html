@@ -4,14 +4,26 @@
     <div class="employee">
         <div class="column">
             <img src="{{ url_for('static', filename='user.png') }}" width="100" height="100" alt="user icon"><br>
-            <div class="column_btn"><a>Edit</a></div>
-            <div class="column_btn"><a>Delete</a></div>
+            <div class="column_btn" onclick="location.href='/employees/edit/{{ employee.id }}'">
+                <a>Edit</a>
+            </div>
+            <div class="column_btn" onclick="deleteDisplay('employee_delete', '/employees/{{ employee.id }}', true)">
+                <a>Delete</a>
+            </div>
         </div>
         <div class="employee_data">
             <p><b>{{ employee.name }} {{ employee.surname }}</b></p>
             <p><b>Birthday:</b> {{ employee.date_of_birth }}</p>
             <p><b>Department:</b> {{ employee.department }}</p>
             <p><b>Salary:</b> {{ employee.salary }}</p>
+        </div>
+    </div>
+    <div class="delete" id="employee_delete">
+        <h1>Delete employee</h1>
+        <p>Please, confirm removing</p>
+        <div>
+            <button id="employee_delete_yes">Yes</button>
+            <button style="float: right" onclick="deleteDisplay('employee_delete')">Cancel</button>
         </div>
     </div>
 {% endblock %}

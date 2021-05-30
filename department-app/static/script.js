@@ -1,60 +1,85 @@
-async function put(department_id) {
+function putDepartment(department_id) {
     const inputs = document.getElementById('put').elements;
     const data = {
         'name': inputs['name'].value
     }
 
-    try {
-        const response = await fetch(`/departments/${department_id}`, {
+    fetch(`/departments/${department_id}`, {
             method: 'PUT',
             body: JSON.stringify(data),
             headers: {
               'Content-Type': 'application/json'
             },
-        });
-
-        if (response.ok) {
-            document.location.replace('/departments');
-        } else {
-            alert(await response.text());
-        }
-
-    } catch (error) {
-        alert(error);
-    }
+        }).then(response => {
+            if (response.ok) {
+                window.location = document.referrer;
+            } else {
+                alert(response.text());
+            }
+        }).catch (e => alert(e))
 }
 
-function deleteDisplay(page, id= null) {
-    const confirm_dialog = document.getElementById(`${page}_delete`);
+function putEmployee(employee_id) {
+    const form = document.querySelector('#put_employee');
+
+    const data = ((form) => {
+        let obj = {};
+        const formData = new FormData(form);
+        for (let key of formData.keys()) {
+            obj[key] = formData.get(key);
+        }
+        return JSON.stringify(obj);
+    })(form);
+
+    fetch(`/employees/${employee_id}`, {
+            method: 'PUT',
+            body: data,
+            headers: {
+              'Content-Type': 'application/json'
+            },
+        }).then(response => {
+            if (response.ok) {
+                window.location = document.referrer;
+            } else {
+                alert(response.text());
+            }
+        }).catch (e => {
+            alert(e)
+    })
+}
+
+function deleteDisplay(id, url = null, toRefer = null) {
+    const confirm_dialog = document.getElementById(id);
     const actualDisplay = getComputedStyle(confirm_dialog).display;
 
     if (actualDisplay === 'none') {
         confirm_dialog.style.display = 'block';
-        const confirm = document.getElementById('yes');
-        confirm.onclick = deleteData.bind(null, page, id);
+        const confirm = document.getElementById(`${id}_yes`);
+        confirm.onclick = deleteData.bind(null, url, toRefer);
     } else {
         confirm_dialog.style.display = 'none';
-
     }
 }
 
-async function deleteData(page, id) {
-    try {
-        const response = await fetch(`/${page}/${id}`, {
+function deleteData(url, toRefer) {
+    fetch(url, {
             method: 'DELETE',
             body: '',
             headers: {
                 'Content-Type': 'application/json'
             },
-        });
-        if (response.ok) {
-            document.location.replace(`/${page}`);
-        } else {
-            alert(await response.text());
-        }
-    } catch (e) {
-        alert(e);
-    }
+        }).then(response => {
+            if (response.ok) {
+                if (toRefer) {
+                    window.location = document.referrer
+                } else {
+                    window.location.reload();
+                }
+
+            } else {
+                alert(response.text())
+            }
+        }).catch(e => alert(e))
 }
 
 function cancel() {

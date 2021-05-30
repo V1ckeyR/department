@@ -11,16 +11,17 @@
             <br><a>Birthday: {{ employee.date_of_birth }}</a>
             <br><a>Salary: {{ employee.salary }}</a>
             <div>
-                <a href="form_add_employee.html">Edit</a>
+                <a href="/employees/edit/{{ employee.id }}">Edit</a>
                 <a>|</a>
-                <a class="delete_text" onclick="deleteDisplay('department', {{ employee.id }})">Delete</a>
+                <a class="delete_text"
+                   onclick="deleteDisplay('department_delete', '/employees/{{ employee.id }}')">Delete</a>
                 <a>|</a>
                 <a href="/employees/{{ employee.id }}">More...</a>
             </div>
         </div>
     {% endfor %}
 
-    <div onclick="location.href='/employee/add';" class="new-item">
+    <div onclick="location.href='/employees/add';" class="new-item">
         <a>+</a>
     </div>
 
@@ -28,8 +29,8 @@
         <h1>Delete employee</h1>
         <p>Please, confirm removing</p>
       <div>
-          <button>Yes</button>
-          <button style="float: right" onclick="deleteDisplay('department')">Cancel</button>
+          <button id="department_delete_yes">Yes</button>
+          <button style="float: right" onclick="deleteDisplay('department_delete')">Cancel</button>
       </div>
     </div>
 {% endblock %}

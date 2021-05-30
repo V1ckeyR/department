@@ -2,8 +2,7 @@
 
 {% block header %}<a>Edit employee</a>{% endblock %}
 {% block main %}
-    <form method="post", action="/employees/{{ emp.id }}">
-        {{ form.csrf_token }}
+    <form id="put_employee">
 
         {{ form.name.label() }}
         {{ form.name(value=emp.name) }}
@@ -26,7 +25,7 @@
             {% endif %}
         {% endwith %}
         <div style="margin-top: 20px">
-            {{ form.submit() }}
+            <input type="button" value="Submit" onclick="putEmployee({{ emp.id }})">
             <input type="button" value="Cancel" style="float:right" onclick="cancel()">
         </div>
     </form>
