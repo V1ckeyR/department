@@ -20,11 +20,6 @@
         {{ form.salary.label() }}
         {{ form.salary() }}
 
-        {% with msg = get_flashed_messages() %}
-            {% if msg %}
-                <p style="color:white!important;">{{ msg[0] }}</p>
-            {% endif %}
-        {% endwith %}
         <div style="margin-top: 20px">
             {{ form.submit() }}
             <input type="button" value="Cancel" style="float:right" onclick="cancel()">

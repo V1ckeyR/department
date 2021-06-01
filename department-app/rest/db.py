@@ -1,4 +1,5 @@
 """Database initialization function"""
+import logging
 
 import pymysql
 from flask_migrate import Migrate
@@ -8,7 +9,7 @@ from rest.app import app
 
 
 def database_init(application):
-    """Configure app and database, then create DB"""
+    """Create MySQL DB"""
 
     name = Config.db_name
     host = Config.db_host
@@ -24,5 +25,11 @@ def database_init(application):
     return SQLAlchemy(application)
 
 
-db = database_init(app)
+if not Config.testing:
+    logging.info('Initiating production database')
+    db = database_init(app)
+else:
+    logging.info('Initiating testing database')
+    db = SQLAlchemy()
+
 migrate = Migrate(app, db)
