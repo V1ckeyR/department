@@ -95,17 +95,38 @@ input[type=submit], input[type=button] {
 .employee {
     display: grid;
     grid-column-gap: 30px;
-    grid-template-columns: max-content auto;
+    grid-template-columns: 110px max-content;
+    margin-top: 20px;
 }
 
 .column {
     text-align: center;
+    width: 100px;
+    margin-left: 10px;
 }
 
-.column a, img {
-    padding: 10px;
-    color: rgb(26, 26, 52)!important;
+.column img {
+    margin-top: 10px;
     background-color: rgb(236, 86, 63);
+}
+
+.column_btn {
+    margin-top: 10px;
+    background-color: rgb(236, 86, 63);
+}
+
+.column_btn a {
+    color: rgb(26, 26, 52)!important;
+}
+
+.employee_data {
+    border-left: 2px solid rgb(238, 231, 229);
+}
+
+.employee_data p {
+    text-align: left;
+    margin-left: 20px;
+    color: rgb(238, 231, 229)!important;
 }
 
 .filter {
@@ -150,4 +171,9 @@ input[type=submit], input[type=button] {
     box-sizing: border-box;
     color: rgb(26, 26, 52);
     border: 2px solid rgb(26, 26, 52);
+}
+
+.delete_text:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -1,32 +1,40 @@
 {% extends 'base.html' %}
 
+{% block header %}
+    <nav>
+        <a href="/departments">Departments</a>
+        <a href="/employees">Employees</a>
+    </nav>
+{% endblock %}
+
 {% block main %}
     <h1>Departments</h1>
 
     {% for department in deps %}
         <div class="item">
             <span>{{ department.name }}</span>
-            <br><a>Average salary: unknown</a>
+            <br><a>Average salary: {{ department.avg }}</a>
             <div>
-                <a>Edit</a>
+                <a href='/departments/edit/{{ department.id }}'>Edit</a>
                 <a>|</a>
-                <a>Delete</a>
+                <a class="delete_text" onclick="deleteDisplay('departments_delete',
+                        '/departments/{{ department.id }}')">Delete</a>
                 <a>|</a>
-                <a>More...</a>
+                <a href="/departments/{{ department.id }}">More...</a>
             </div>
         </div>
     {% endfor %}
 
-    <div class="new-item">
+    <div onclick="location.href='/departments/add';" class="new-item">
         <a>+</a>
     </div>
 
-    <div class="delete">
+    <div class="delete" id="departments_delete">
         <h1>Delete department</h1>
         <p>Please, confirm removing</p>
         <div>
-            <button>Yes</button>
-            <button style="float: right">Cancel</button>
+            <button id="departments_delete_yes">Yes</button>
+            <button style="float: right" onclick="deleteDisplay('departments_delete')">Cancel</button>
         </div>
     </div>
 

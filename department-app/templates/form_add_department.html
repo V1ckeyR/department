@@ -1,0 +1,16 @@
+{% extends 'form_base.html' %}
+
+{% block header %}<a>Add department</a>{% endblock %}
+{% block main %}
+    <form method="post" action="/departments">
+        {{ form.csrf_token }}
+
+        {{ form.name.label() }}
+        {{ form.name() }}
+
+        <div style="margin-top: 20px">
+            {{ form.submit() }}
+            <input type="button" value="Cancel" style="float:right" onclick="cancel()">
+        </div>
+    </form>
+{% endblock %}

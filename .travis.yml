@@ -10,6 +10,7 @@ install:
   - python setup.py -q install
 script:
   - cd department-app
+  - export testing=1
   - coverage run --source=. --omit '*/venv/*' -m unittest
 after_success:
   - coveralls

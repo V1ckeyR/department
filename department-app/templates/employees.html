@@ -1,49 +1,61 @@
 {% extends 'base.html' %}
 
+{% block head %}
+    <script src={{ url_for('static', filename='filter.js') }}></script>
+{% endblock %}
+
+{% block header %}
+    <nav>
+        <a href="/departments">Departments</a>
+        <a href="/employees">Employees</a>
+    </nav>
+{% endblock %}
+
 {% block main %}
     <h1>Employees</h1>
 
     <div class="filter">
         <div>
             <label for="start">Date from:</label>
-            <input type="date" id="start" name="trip-start"
-                   value="1990-01-01"
-                   min="1950-01-01" max="2005-01-01">
+            <input type="date" id="start" name="start"
+                   value={{ values[0] }} required
+                   min={{ min }} max={{ max }} >
         </div>
         <div>
-            <label for="end">by:</label>
-            <input type="date" id="end" name="trip-end"
-                   value="2005-01-01"
-                   min="1950-01-01" max="2005-01-01">
+            <label for="finish">by:</label>
+            <input type="date" id="finish" name="finish"
+                   value={{ values[1] }} required
+                   min={{ min }} max={{ max }} >
         </div>
     </div>
 
     {% for employee in emps %}
         <div class="item">
             <span>{{ employee.name }} {{ employee.surname }}</span>
+            <br><a>Department: {{ employee.department }}</a>
             <br><a>Birthday: {{ employee.date_of_birth }}</a>
             <br><a>Salary: {{ employee.salary }}</a>
             <div>
-                <a>Edit</a>
+                <a href="/employees/edit/{{ employee.id }}">Edit</a>
                 <a>|</a>
-                <a>Delete</a>
+                <a class="delete_text" onclick="deleteDisplay('employees_delete',
+                        '/employees/{{ employee.id }}')">Delete</a>
                 <a>|</a>
-                <a>More...</a>
+                <a href="/employees/{{ employee.id }}">More...</a>
             </div>
         </div>
     {% endfor %}
 
-    <div class="new-item">
+    <div class="new-item" onclick="location.href='/employees/add';">
         <a>+</a>
     </div>
 
-    <div class="delete">
+    <div class="delete" id="employees_delete">
         <h1>Delete employee</h1>
         <p>Please, confirm removing</p>
         <div>
-            <button>Yes</button>
-            <button style="float: right">Cancel</button>
+            <button id="employees_delete_yes">Yes</button>
+            <button style="float: right" onclick="deleteDisplay('employees_delete')">Cancel</button>
         </div>
     </div>
-
 {% endblock %}

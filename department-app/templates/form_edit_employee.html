@@ -1,0 +1,32 @@
+{% extends 'form_base.html' %}
+
+{% block header %}<a>Edit employee</a>{% endblock %}
+{% block main %}
+    <form id="put_employee">
+
+        {{ form.name.label() }}
+        {{ form.name(value=emp.name) }}
+
+        {{ form.surname.label() }}
+        {{ form.surname(value=emp.surname) }}
+
+        {{ form.date.label() }}
+        {{ form.date(value=emp.date_of_birth) }}
+
+        {{ form.department.label() }}
+        {{ form.department() }}
+
+        {{ form.salary.label() }}
+        {{ form.salary(value=emp.salary) }}
+
+        {% with msg = get_flashed_messages() %}
+            {% if msg %}
+                <p style="color:white!important;">{{ msg[0] }}</p>
+            {% endif %}
+        {% endwith %}
+        <div style="margin-top: 20px">
+            <input type="button" value="Submit" onclick="putEmployee({{ emp.id }})">
+            <input type="button" value="Cancel" style="float:right" onclick="cancel()">
+        </div>
+    </form>
+{% endblock %}

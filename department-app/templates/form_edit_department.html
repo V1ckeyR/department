@@ -1,0 +1,14 @@
+{% extends 'form_base.html' %}
+
+{% block header %}<a>Edit department</a>{% endblock %}
+{% block main %}
+    <form id="put">
+        <label for="name">Name of department:</label>
+        <input id="name" name="name" required type="text" value="{{ dep.name }}">
+
+        <div style="margin-top: 20px">
+            <input type="button" value="Submit" onclick="putDepartment({{ dep.id }})">
+            <input type="button" value="Cancel" style="float:right" onclick="cancel()">
+        </div>
+    </form>
+{% endblock %}

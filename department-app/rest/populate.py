@@ -1,5 +1,8 @@
-from models import model
-from .config import departments_data, employees_data
+"""This module contains functions to populate database with test data"""
+
+from config import departments_data, employees_data
+import models
+from rest.db import db
 
 
 def populate_table(database, table, data):
@@ -19,5 +22,5 @@ def populate_table(database, table, data):
 def populate_db():
     """Populate tables with test data"""
 
-    populate_table(model.db, model.Department, departments_data)
-    populate_table(model.db, model.Employee, employees_data)
+    populate_table(db, models.Department, departments_data)
+    populate_table(db, models.Employee, employees_data)
