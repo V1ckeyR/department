@@ -1,6 +1,7 @@
 """Data class for configuration"""
-import os
-from os import environ
+
+from os import getenv
+from dotenv import load_dotenv
 from dataclasses import dataclass
 
 
@@ -8,12 +9,14 @@ from dataclasses import dataclass
 class Config:
     """Set Flask configuration from .env file."""
 
+    load_dotenv()
+
     # Database Config
-    testing = int(environ['testing'])
-    db_name = environ['db_name']
-    db_host = environ['db_host']
-    db_user = environ['db_user']
-    db_passwd = environ['db_passwd'] if ('db_passwd' in os.environ) else ''
+    testing = int(getenv('testing'))
+    db_name = getenv('db_name')
+    db_host = getenv('db_host')
+    db_user = getenv('db_user')
+    db_passwd = getenv('db_passwd') if getenv('db_passwd') else ''
 
     # App Config
     sqlalchemy_database_uri = f'mysql+pymysql://{db_user}:{db_passwd}@{db_host}/{db_name}'
