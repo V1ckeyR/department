@@ -1,0 +1,15 @@
+# /etc/systemd/system/
+
+[Unit]
+Description=Gunicorn instance to serve department
+After=network.target
+
+[Service]
+User=vickeyr
+Group=www-data
+WorkingDirectory=/home/vickeyr/epam/department/department-app
+Environment="PATH=/home/vickeyr/epam/department/department-app/venv/bin"
+ExecStart=/home/vickeyr/epam/department/department-app/venv/bin/gunicorn --workers 3 --bind unix:/tmp/department.sock -m 777 run:app
+
+[Install]
+WantedBy=multi-user.target

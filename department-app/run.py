@@ -1,3 +1,4 @@
+
 """This script run application on a local development server"""
 
 from config.logger import logger
