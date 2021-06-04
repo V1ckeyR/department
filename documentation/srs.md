@@ -137,7 +137,7 @@ The list displays the following columns:
 * Application displays form to enter employee data for current department;
 * User enter data and press "Submit" button;
 * If error occurs, then error message is displaying;
-* If new record is successfully added, then new average salary and list of employees with new record is displaying;
+* If new record is successfully added, employee page is displaying;
 
 **Cancel operation scenario**
 
@@ -148,13 +148,14 @@ The list displays the following columns:
 
 ![Departments mockup](https://i.ibb.co/HzB2tNk/form-emp-dep.jpg "Add employee")
 
-Pic. 1.6 Add department.
+Pic. 1.6 Add employee.
 
 When adding employee, the following details are entered:
 
 * Name - Employee's name;
 * Surname - Employee's surname;
 * Date of birth - Employee's date of birth;
+* Department - Related department from list;
 * Salary - Employee's salary.
 
 #### 1.5.3 Edit employee
@@ -176,13 +177,14 @@ When adding employee, the following details are entered:
 
 ![Departments mockup](https://i.ibb.co/HzB2tNk/form-emp-dep.jpg "Edit employee")
 
-Pic. 1.7 Edit department.
+Pic. 1.7 Edit employee.
 
 When editing employee, the following details are entered:
 
 * Name - Employee's name;
 * Surname - Employee's surname;
 * Date of birth - Employee's date of birth;
+* Department - Related department from list;
 * Salary - Employee's salary.
 
 #### 1.5.4 Remove employee
@@ -330,6 +332,7 @@ Pic. 2.4 Delete employee.
 * Application displays employee data.
 
 ![Employee mockup](https://i.ibb.co/ChrJqtF/emp.jpg "Employee")
+
 Pic. 2.5 Employee page.
 
 #### 2.5.2 Edit employee
@@ -350,6 +353,7 @@ Pic. 2.5 Employee page.
 * Data don't save, list of records is displaying to user.
 
 ![Employee mockup](https://i.ibb.co/7nTVWqG/form-emp.jpg "Edit employee")
+
 Pic. 2.6 Edit employee.
 
 When editing employee, the following details are entered:
