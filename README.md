@@ -16,7 +16,7 @@ https://github.com/V1ckeyR/department/tree/main/documentation
 * [SQLAlchemy](https://www.sqlalchemy.org/)
 * [MySQL](https://dev.mysql.com/doc/)
 
-## How to build
+## How to install
 1. Clone the repository:
 ~~~
 git clone https://github.com/V1ckeyR/department.git
@@ -32,16 +32,17 @@ git clone https://github.com/V1ckeyR/department.git
 ./install.sh
 ~~~
 
-## How to start
-1. Setup [.env](/department-app/.env) with appropriate *db_user* and *db_password*
-2. Run:
+4. Setup [.env](/department-app/.env) with appropriate *db_user* and *db_password*
+
+5. Run:
 ~~~
  sudo cp webapp/department.service /etc/systemd/system
  sudo systemctl start department.service
  sudo cp webapp/department /etc/nginx/sites-available/department
  sudo systemctl start nginx.service
 ~~~
-3. Visit address
+
+6. Visit address
 
 ## Address
     127.0.0.1
