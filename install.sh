@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo "Install process begin..."
+echo "Installation process begin..."
 python -m pip install --upgrade pip
-pip install -r requirements.txt
+pip install -r department-app/requirements.txt
 python setup.py -q install
+echo "Installation process finished"
